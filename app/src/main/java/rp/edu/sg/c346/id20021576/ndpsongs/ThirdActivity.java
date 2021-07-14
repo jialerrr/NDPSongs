@@ -56,14 +56,14 @@ public class ThirdActivity extends AppCompatActivity {
 
         if ((data.getStar()) == "*") {
             rbStar1.setChecked(true);
-        } else if ((data.getStar()) == "**") {
+        } else if (data.getStar().equals("**")) {
             rbStar2.setChecked(true);
-        } else if ((data.getStar()) == "***") {
+        } else if (data.getStar().equals("***")) {
             rbStar3.setChecked(true);
-        } else if ((data.getStar()) == "****") {
+        } else if (data.getStar().equals("****")) {
             rbStar4.setChecked(true);
         } else
-            if ((data.getStar()) == "*****") {
+            if (data.getStar().equals("*****")) {
             rbStar5.setChecked(true);
         }
 

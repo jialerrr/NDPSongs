@@ -14,7 +14,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "simplesongs.db";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_SONG = "song";
-    private static final String COLUMN_ID = "_id";
+    private static final String COLUMN_ID = "song_id";
     private static final String COLUMN_TITLE_CONTENT = "title_content";
     private static final String COLUMN_SINGER_CONTENT = "singer_content";
     private static final String COLUMN_YEAR_CONTENT = "year_content";
