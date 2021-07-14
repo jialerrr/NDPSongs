@@ -79,68 +79,29 @@ public class ListActivity extends AppCompatActivity {
         spnYear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
+                    ArrayList<Song> alFilt;
+                    alFilt = new ArrayList<Song>();
+                    int yearFind = 0;
+
+                    if(spnYear.getSelectedItemPosition() == 0) {
                         lv.setAdapter(aa);
-
-                        break;
-
-                    case 1:
-                        ArrayList<Song> alFilt;
-                        alFilt = new ArrayList<Song>();
-                        int yearFind = al.get(0).getYear();
-
+                    } else {
+                        yearFind = Integer.parseInt(spnYear.getSelectedItem().toString());
                         for (int i = 0; i < al.size(); i++) {
                             if (al.get(i).getYear() == yearFind) {
                                 alFilt.add(al.get(i));
                             }
                         }
-
                         ArrayAdapter aaFilt = new ArrayAdapter<Song>(ListActivity.this, android.R.layout.simple_list_item_1, alFilt);
                         lv.setAdapter(aaFilt);
 
+
                         aaFilt.notifyDataSetChanged();
-                        break;
-
-                    case 2:
-                        ArrayList<Song> alFilt1;
-                        alFilt1 = new ArrayList<Song>();
-                        int yearFind1 = al.get(1).getYear();
-
-                        for (int i = 0; i < al.size(); i++) {
-                            if (al.get(i).getYear() == yearFind1) {
-                                alFilt1.add(al.get(i));
-                            }
-                        }
-
-                        ArrayAdapter aaFilt1 = new ArrayAdapter<Song>(ListActivity.this, android.R.layout.simple_list_item_1, alFilt1);
-                        lv.setAdapter(aaFilt1);
-
-                        aaFilt1.notifyDataSetChanged();
-                        break;
-
-                    case 3:
-                        ArrayList<Song> alFilt2;
-                        alFilt2 = new ArrayList<Song>();
-                        int yearFind2 = al.get(2).getYear();
-
-                        for (int i = 0; i < al.size(); i++) {
-                            if (al.get(i).getYear() == yearFind2) {
-                                alFilt2.add(al.get(i));
-                            }
-                        }
-
-                        ArrayAdapter aaFilt2 = new ArrayAdapter<Song>(ListActivity.this, android.R.layout.simple_list_item_1, alFilt2);
-                        lv.setAdapter(aaFilt2);
-
-                        aaFilt2.notifyDataSetChanged();
-                        break;
+                    }
                 }
-            }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
 
         });

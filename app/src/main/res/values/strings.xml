@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">NDPSongs</string>
     <string-array name="spinnerYear">
-        <item>Filter Year</item>
     </string-array>
 </resources>
